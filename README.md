@@ -17,6 +17,13 @@
 > [!NOTE]
 > **Language notice — the application is in French.** The additions made by this fork (dashboard tiles, the “Températures NAS” charts page, menu entries, theme toggle), the watchdog's alerts, notifications and web page, the scripts' messages and the source-code comments are written **in French only**. The upstream OpenLinkHub interface has its own language setting (the screenshots below were taken with it set to French). Pull requests that add English translations are welcome. This README and the guides in `docs/` are available in both languages.
 
+## Info
+
+- Born from a real need: cooling a Synology NAS shut inside a cabinet, and protecting it when the ventilation fails.
+- **No warranty and no liability.** Use it at your own risk. The scripts run as root and can shut your NAS down: read them first and start in dry-run mode.
+- Developed and tested on the author's own hardware (see [Hardware](#hardware)); nothing else has been tested.
+- This is **not** an official Corsair, Synology or OpenLinkHub product.
+
 <p align="center">
   <a href="#what-this-fork-adds">What's new</a> ·
   <a href="#screenshots">Screenshots</a> ·

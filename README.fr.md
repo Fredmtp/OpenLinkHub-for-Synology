@@ -14,6 +14,13 @@
 >
 > *EN — This is an unofficial fork of [OpenLinkHub](https://github.com/jurkovic-nikola/OpenLinkHub), adapted to run on a Synology NAS (DSM). The device support, the original web UI and the core work belong to the upstream project (GPL-3.0). This fork is not endorsed by its author; please report upstream issues upstream.*
 
+## Info
+
+- Né d'un vrai besoin : refroidir un NAS Synology enfermé dans un meuble, et le protéger quand la ventilation tombe.
+- **Aucune garantie, aucune responsabilité.** Utilisation à vos risques. Les scripts s'exécutent en root et peuvent éteindre votre NAS : lisez-les d'abord et commencez par le mode à blanc (`-dry`).
+- Développé et testé sur le matériel de l'auteur (voir [Matériel](#matériel-utilisé)) ; rien d'autre n'a été testé.
+- Ce n'est **pas** un produit officiel de Corsair, de Synology ni d'OpenLinkHub.
+
 <p align="center">
   <a href="#ce-que-ce-fork-ajoute">Nouveautés</a> ·
   <a href="#captures">Captures</a> ·
