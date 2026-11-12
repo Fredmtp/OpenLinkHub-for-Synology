@@ -147,7 +147,7 @@ Nos modifications d'OpenLinkHub sont volontairement **minces** (`openlinkhub-pat
 - **Surveillance `olh-watchdog`, scripts, thème** — code de ce dépôt, également sous GPL-3.0.
 - **Polices** Montserrat et Open Sans — SIL Open Font License 1.1 (textes joints dans `dist/static/fonts/goldcream/`).
 - Bibliothèques de l'interface d'origine (Bootstrap, jQuery, DataTables, etc.) : voir le projet source.
-- **Développé avec [Claude Code](https://claude.com/claude-code)** (Anthropic, assistant IA), sous la direction de l'auteur ; l'auteur a testé le résultat sur du vrai matériel et reste responsable de ce qui est publié ici.
+- **Développé avec [Claude Code](https://claude.com/claude-code)** (Anthropic, assistant IA), sous la direction de l'auteur ; l'auteur a testé le résultat sur du vrai matériel.
 - Détail des crédits et des marques : [NOTICE.md](NOTICE.md).
 
 <p align="center"><sub>Version 1.0.0 · <a href="CHANGELOG.fr.md">historique des versions</a></sub></p>

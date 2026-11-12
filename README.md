@@ -152,7 +152,7 @@ Our changes to OpenLinkHub are deliberately **thin** (`openlinkhub-patches/`, a 
 - **`olh-watchdog` monitoring, scripts, theme** — code in this repository, also under GPL-3.0.
 - **Fonts** Montserrat and Open Sans — SIL Open Font License 1.1 (texts in `dist/static/fonts/goldcream/`).
 - UI libraries of the original interface (Bootstrap, jQuery, DataTables, etc.): see the upstream project.
-- **Developed with [Claude Code](https://claude.com/claude-code)** (Anthropic, AI assistant), under the author's direction; the author tested the result on real hardware and is responsible for what is published here.
+- **Developed with [Claude Code](https://claude.com/claude-code)** (Anthropic, AI assistant), under the author's direction; the author tested the result on real hardware.
 - Full credits and trademarks: [NOTICE.md](NOTICE.md).
 
 <p align="center"><sub>Version 1.0.0 · <a href="CHANGELOG.md">changelog</a></sub></p>
