@@ -1,0 +1,50 @@
+{{ define "temperature-bar" }}
+{{/* Modifié pour OpenLinkHub for Synology (2026, voir CHANGELOG.md). Original © auteurs de OpenLinkHub, GPL-3.0. / Modified for OpenLinkHub for Synology (2026, see CHANGELOG.md). Original © OpenLinkHub authors, GPL-3.0. */}}
+{{ $root := . }}
+{{ $dash := .Dashboard }}
+<!-- Temps -->
+<div class="row g-4 mb-4 metrics-grid">
+    <!-- CPU -->
+    <div class="col-md-2">
+        <div class="card p-3">
+            <div class="card-title text-ellipsis">{{ $root.Lang "txtCpuTemperature" }}</div>
+            <div id="cpu_temp" class="stat text-warning text-ellipsis">{{ .CpuTemp }}</div>
+            <small class="text-ellipsis">{{ .SystemInfo.CPU.Model }}</small>
+        </div>
+    </div>
+
+    <!-- GPUs -->
+    {{ if .SystemInfo.GPU }}
+    {{ range .SystemInfo.GPU }}
+    <div class="col-md-2">
+        <div class="card p-3">
+            <div class="card-title text-ellipsis">{{ $root.Lang "txtGpuTemperature" }}</div>
+            <div id="gpu_temp_{{ .Index }}" class="stat text-warning text-ellipsis">{{ $dash.TemperatureToString .Temperature }}</div>
+            <small class="text-ellipsis">{{ .Model }}</small>
+        </div>
+    </div>
+    {{ end }}
+    {{ end }}
+
+    {{ if .SystemInfo.Storage }}
+    {{ range .SystemInfo.Storage }}
+    <div class="col-md-2">
+        <div class="card p-3">
+            <div class="card-title text-ellipsis">{{ $root.Lang "txtStorageTemperature" }}</div>
+            <div id="storage_temp-{{ .Key }}" class="stat text-warning text-ellipsis">{{ $dash.TemperatureToString .Temperature }}</div>
+            <small class="text-ellipsis">{{ .Model }}</small>
+        </div>
+    </div>
+    {{ end }}
+    {{ end }}
+</div>
+
+<!-- NAS: disques, ventilateurs du NAS, onduleur, RAID, volume (données de olh-watchdog, port 27004) -->
+<div class="d-flex justify-content-between align-items-center mb-2 section-head">
+    <h2 class="section-title">NAS · DS1825+</h2>
+    <small id="nas-tiles-msg" class="text-muted">Chargement des capteurs du NAS…</small>
+    <a href="#" id="nas-tiles-reset" class="small">Réinitialiser l'ordre</a>
+</div>
+<div id="nas-tiles" class="row g-4 mb-4"></div>
+<script src="/static/js/nas-tiles.js"></script>
+{{ end }}

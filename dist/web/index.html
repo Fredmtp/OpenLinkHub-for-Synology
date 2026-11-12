@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<!-- Modifié pour OpenLinkHub for Synology (2026, voir CHANGELOG.md). Original © auteurs de OpenLinkHub, GPL-3.0. / Modified for OpenLinkHub for Synology (2026, see CHANGELOG.md). Original © OpenLinkHub authors, GPL-3.0. -->
+{{ template "head" . }}
+<body>
+
+<div class="container-fluid">
+    {{ $root := . }}
+    {{ $deviceList := $root.Devices }}
+    {{ $battery := .BatteryStats }}
+    {{ $dash := .Dashboard }}
+    <div class="row">
+        <!-- Sidebar -->
+        {{ template "sidebar" . }}
+
+        <!-- Main -->
+        <main class="main-content p-4">
+            <!-- Temperature bar -->
+            {{ if .Dashboard.TemperatureBar }}
+            {{ template "temperature-bar" . }}
+            {{ end }}
+
+            <!-- Dashboard -->
+            <h2 class="section-title mb-2">Meuble · iCUE LINK</h2>
+            <div class="row align-items-start">
+                <!-- Device placeholder -->
+                <div id="system-cards" class="device-placeholder"></div>
+
+                <!-- Add new device -->
+                <div id="system-cards-add" class="col-md-2">
+                    <div class="card system-card text-center">
+                        <div class="card-body">
+                            <div class="add-device-widget">
+                                <div class="add-device-icon">
+                                    <i class="bi bi-plus-lg"></i>
+                                </div>
+                                <div class="add-device-title">
+                                    {{ $root.Lang "txtAddDeviceToDashboard" }}
+                                </div>
+                                <label class="add-device-select">
+                                    <select class="system-select" id="dashboardDeviceSelect">
+                                        <option selected disabled>{{ $root.Lang "txtSelectDevice" }}</option>
+                                        {{ range .Devices }}
+                                        {{ if eq .Hidden true }}
+                                        {{ continue }}
+                                        {{ end }}
+
+                                        {{ if .GetDevice }}
+                                        <option value="{{ .Serial }}">{{ .Product }}</option>
+                                        {{ end }}
+                                        {{ end }}
+                                    </select>
+                                </label>
+                                <label class="full-width">
+                                    <div class="settings-list">
+                                        <div class="settings-row">
+                                            <button class="system-button btn-accent add-device-btn addDeviceToDashboard" id="addDeviceToDashboard">
+                                                {{ $root.Lang "txtSave" }}
+                                            </button>
+                                            <button class="system-button danger add-device-btn deleteDeviceFromDashboard" id="deleteDeviceFromDashboard">
+                                                {{ $root.Lang "txtDelete" }}
+                                            </button>
+                                        </div>
+                                    </div>
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+</div>
+<script src="/static/js/sidebar.js"></script>
+<script src="/static/js/index.js"></script>
+<script src="/static/js/dashboard-order.js"></script>
+{{ if .Dashboard.TemperatureBar }}
+<script src="/static/js/temperature-bar.js"></script>
+{{ end }}
+</body>
+</html>

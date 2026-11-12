@@ -1,0 +1,43 @@
+diff --git a/src/audio/audio.c b/src/audio/audio.c
+index 20e080b..19c157b 100644
+--- a/src/audio/audio.c
++++ b/src/audio/audio.c
+@@ -1,3 +1,5 @@
++//go:build !noaudio
++
+ /*
+  * audio.c
+  *
+diff --git a/src/audio/audio.go b/src/audio/audio.go
+index 476cc38..cb70ea0 100644
+--- a/src/audio/audio.go
++++ b/src/audio/audio.go
+@@ -1,3 +1,5 @@
++//go:build !noaudio
++
+ package audio
+ 
+ // Package: audio
+diff --git a/src/audio/audio.h b/src/audio/audio.h
+index 4a106f4..e232fc2 100644
+--- a/src/audio/audio.h
++++ b/src/audio/audio.h
+@@ -1,3 +1,5 @@
++//go:build !noaudio
++
+ #pragma once
+ #include <stdint.h>
+ 
+diff --git a/src/devices/lsh/lsh.go b/src/devices/lsh/lsh.go
+index 696ce82..bbb8f8c 100644
+--- a/src/devices/lsh/lsh.go
++++ b/src/devices/lsh/lsh.go
+@@ -372,7 +372,7 @@ func Init(vendorId, productId uint16, serial, path string) *common.Device {
+ 	pwd = config.GetConfig().ConfigPath
+ 
+ 	// Open device, return if failure
+-	dev, err := hid.Open(vendorId, productId, serial)
++	dev, err := hid.OpenPath(path)
+ 	if err != nil {
+ 		logger.Log(logger.Fields{"error": err, "vendorId": vendorId, "productId": productId, "serial": serial}).Error("Unable to open HID device")
+ 		return nil

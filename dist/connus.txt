@@ -1,0 +1,5 @@
+# Situations déjà connues de la surveillance (fichier lu au démarrage).
+# Format: une ligne « clé | note ». Une situation connue n'est jamais poussée par notification;
+# elle est rappelée une fois par semaine, sauf aggravation (une hausse des compteurs d'un disque est toujours signalée tout de suite).
+# Exemple:
+# disk-errors-sata4 | 12 erreurs de lecture anciennes, disque testé et reste en service
