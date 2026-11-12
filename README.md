@@ -86,7 +86,7 @@ This project was developed and tested on the setup below. Other models may work;
 ## Architecture
 
 <p align="center">
-  <a href="img/architecture-en-light.svg">
+  <a href="img/architecture-en-light.svg?raw=true">
     <picture>
       <source media="(prefers-color-scheme: dark)" srcset="img/architecture-en-dark.svg">
       <img alt="Architecture diagram" src="img/architecture-en-light.svg" width="100%">

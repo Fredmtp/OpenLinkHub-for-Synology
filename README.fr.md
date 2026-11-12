@@ -81,7 +81,7 @@ Ce projet a été développé et éprouvé sur l'installation ci-dessous. D'autr
 ## Architecture
 
 <p align="center">
-  <a href="img/architecture-fr-light.svg">
+  <a href="img/architecture-fr-light.svg?raw=true">
     <picture>
       <source media="(prefers-color-scheme: dark)" srcset="img/architecture-fr-dark.svg">
       <img alt="Schéma d'architecture" src="img/architecture-fr-light.svg" width="100%">
