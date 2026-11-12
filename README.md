@@ -21,6 +21,7 @@
 
 - Born from a real need: cooling a Synology NAS shut inside a cabinet, and protecting it when the ventilation fails.
 - **No warranty and no liability.** Use it at your own risk. The scripts run as root and can shut your NAS down: read them first and start in dry-run mode.
+- **Based on OpenLinkHub commit [`949561e`](https://github.com/jurkovic-nikola/OpenLinkHub/commit/949561e165df8f1d922ee4090e1c8b90910d4176) of 24 October 2026** (76 commits after release 0.9.2, before 0.9.3). Later upstream changes are not included.
 - Developed and tested on the author's own hardware (see [Hardware](#hardware)); nothing else has been tested.
 - This is **not** an official Corsair, Synology or OpenLinkHub product.
 
@@ -143,6 +144,8 @@ The step-by-step guide is **[docs/INSTALLATION.md](docs/INSTALLATION.md)**; the 
 git remote add upstream https://github.com/jurkovic-nikola/OpenLinkHub.git
 git fetch upstream
 ```
+
+This fork is based on upstream commit `949561e` (24 Oct 2026, see [Info](#info)); the diff to replay on a newer release is small.
 
 Our changes to OpenLinkHub are deliberately **thin** (`openlinkhub-patches/`, a few page and style files) so they are easy to replay on a new release. Defects that are not Synology-specific should be reported to the upstream project.
 

@@ -18,6 +18,7 @@
 
 - Né d'un vrai besoin : refroidir un NAS Synology enfermé dans un meuble, et le protéger quand la ventilation tombe.
 - **Aucune garantie, aucune responsabilité.** Utilisation à vos risques. Les scripts s'exécutent en root et peuvent éteindre votre NAS : lisez-les d'abord et commencez par le mode à blanc (`-dry`).
+- **Basé sur le commit [`949561e`](https://github.com/jurkovic-nikola/OpenLinkHub/commit/949561e165df8f1d922ee4090e1c8b90910d4176) d'OpenLinkHub du 24 octobre 2026** (76 commits après la version 0.9.2, avant la 0.9.3). Les changements amont postérieurs ne sont pas inclus.
 - Développé et testé sur le matériel de l'auteur (voir [Matériel](#matériel-utilisé)) ; rien d'autre n'a été testé.
 - Ce n'est **pas** un produit officiel de Corsair, de Synology ni d'OpenLinkHub.
 
@@ -138,6 +139,8 @@ Le détail pas à pas est dans **[docs/INSTALLATION.fr.md](docs/INSTALLATION.fr.
 git remote add upstream https://github.com/jurkovic-nikola/OpenLinkHub.git
 git fetch upstream
 ```
+
+Ce fork repose sur le commit amont `949561e` (24 oct. 2026, voir [Info](#info)) ; la différence à rejouer sur une version plus récente est petite.
 
 Nos modifications d'OpenLinkHub sont volontairement **minces** (`openlinkhub-patches/`, quelques fichiers de page et de style) pour rester faciles à rejouer sur une nouvelle version. Les défauts qui ne concernent pas Synology sont à signaler au projet source.
 
