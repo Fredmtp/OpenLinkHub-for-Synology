@@ -80,25 +80,15 @@ Ce projet a été développé et éprouvé sur l'installation ci-dessous. D'autr
 
 ## Architecture
 
-```mermaid
-flowchart LR
-  subgraph NAS["NAS Synology (DSM)"]
-    OLH["OpenLinkHub<br/>interface :27003"]
-    WD["olh-watchdog<br/>surveillance + page d'état :27004"]
-    SUP["superviseur (chaque minute)"]
-  end
-  HUB["iCUE LINK System Hub"] -- USB --> OLH
-  HUB --> FANS["Ventilateurs LX RGB"]
-  HUB --> DUO["Commander DUO<br/>sondes"]
-  WD -- API --> OLH
-  WD --> SENS["Capteurs DSM : disques SMART,<br/>RAID, onduleur, carte mère"]
-  WD -- API locale --> HUE["Pont Hue"] --> PLUG["Prise des ventilateurs"]
-  PLUG --> HUB
-  WD --> NOTIF["ntfy · courriel · buzzer · LED"]
-  SUP -. relance .-> OLH
-  SUP -. relance .-> WD
-  NAS2["Second NAS<br/>(contrôle à distance)"] -. surveille .-> WD
-```
+<p align="center">
+  <a href="img/architecture-fr-light.svg">
+    <picture>
+      <source media="(prefers-color-scheme: dark)" srcset="img/architecture-fr-dark.svg">
+      <img alt="Schéma d'architecture" src="img/architecture-fr-light.svg" width="100%">
+    </picture>
+  </a>
+  <br><sub>Cliquez sur le schéma pour l'ouvrir en grand.</sub>
+</p>
 
 ## Protections par défaut
 
@@ -150,6 +140,7 @@ Nos modifications d'OpenLinkHub sont volontairement **minces** (`openlinkhub-pat
 - **Surveillance `olh-watchdog`, scripts, thème** — code de ce dépôt, également sous GPL-3.0.
 - **Polices** Montserrat et Open Sans — SIL Open Font License 1.1 (textes joints dans `dist/static/fonts/goldcream/`).
 - Bibliothèques de l'interface d'origine (Bootstrap, jQuery, DataTables, etc.) : voir le projet source.
+- **Développé avec [Claude Code](https://claude.com/claude-code)** (Anthropic, assistant IA), sous la direction de l'auteur ; l'auteur a testé le résultat sur du vrai matériel et reste responsable de ce qui est publié ici.
 - Détail des crédits et des marques : [NOTICE.md](NOTICE.md).
 
 <p align="center"><sub>Version 1.0.0 · <a href="CHANGELOG.fr.md">historique des versions</a></sub></p>

@@ -85,25 +85,15 @@ This project was developed and tested on the setup below. Other models may work;
 
 ## Architecture
 
-```mermaid
-flowchart LR
-  subgraph NAS["Synology NAS (DSM)"]
-    OLH["OpenLinkHub<br/>UI :27003"]
-    WD["olh-watchdog<br/>monitoring + status page :27004"]
-    SUP["supervisor (every minute)"]
-  end
-  HUB["iCUE LINK System Hub"] -- USB --> OLH
-  HUB --> FANS["LX RGB fans"]
-  HUB --> DUO["Commander DUO<br/>probes"]
-  WD -- API --> OLH
-  WD --> SENS["DSM sensors: disk SMART,<br/>RAID, UPS, motherboard"]
-  WD -- local API --> HUE["Hue bridge"] --> PLUG["Fans' power plug"]
-  PLUG --> HUB
-  WD --> NOTIF["ntfy · email · buzzer · LEDs"]
-  SUP -. restarts .-> OLH
-  SUP -. restarts .-> WD
-  NAS2["Second NAS<br/>(remote check)"] -. watches .-> WD
-```
+<p align="center">
+  <a href="img/architecture-en-light.svg">
+    <picture>
+      <source media="(prefers-color-scheme: dark)" srcset="img/architecture-en-dark.svg">
+      <img alt="Architecture diagram" src="img/architecture-en-light.svg" width="100%">
+    </picture>
+  </a>
+  <br><sub>Click the diagram to open it full size.</sub>
+</p>
 
 ## Default protections
 
@@ -155,6 +145,7 @@ Our changes to OpenLinkHub are deliberately **thin** (`openlinkhub-patches/`, a 
 - **`olh-watchdog` monitoring, scripts, theme** — code in this repository, also under GPL-3.0.
 - **Fonts** Montserrat and Open Sans — SIL Open Font License 1.1 (texts in `dist/static/fonts/goldcream/`).
 - UI libraries of the original interface (Bootstrap, jQuery, DataTables, etc.): see the upstream project.
+- **Developed with [Claude Code](https://claude.com/claude-code)** (Anthropic, AI assistant), under the author's direction; the author tested the result on real hardware and is responsible for what is published here.
 - Full credits and trademarks: [NOTICE.md](NOTICE.md).
 
 <p align="center"><sub>Version 1.0.0 · <a href="CHANGELOG.md">changelog</a></sub></p>
